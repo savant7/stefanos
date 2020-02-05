@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class HelloController extends Controller
+class IndexController extends Controller
 {
     public function index(){
         return view('hello');
