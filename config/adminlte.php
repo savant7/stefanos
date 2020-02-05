@@ -242,7 +242,7 @@ return [
                 ],
             ]
         ],
-        ['header' => 'Another Heading (Optional)'],
+        ['header' => 'Activities'],
         [
             'text' => 'To Do Lists',
             'url' => '#',
