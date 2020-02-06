@@ -70,7 +70,7 @@ class CreateProspectsTable extends Migration {
             $table->timestamps();
 
 
-            $table->foreign('admincrmtype_id')->references('id')->on('admincrmtypes');
+            $table->foreign('admincrmtype_id')->references('id')->on('admincrmtype');
             $table->foreign('adminclienttype_id')->references('id')->on('adminclienttype');
             $table->foreign('adminclientratingtype_id')->references('id')->on('adminclientratingtype');
             $table->foreign('adminleadtype_id')->references('id')->on('adminleadtype');

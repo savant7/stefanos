@@ -17,8 +17,8 @@ class CreateBillingDetailsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->unsignedBigInteger('billingmain_id');
-            $table->unsignedBigInteger('adminbilllingchgtype_id');
-            $table->unsignedBigInteger('adminbilllingpmttype_id');
+            $table->unsignedBigInteger('adminbillingchgtype_id');
+            $table->unsignedBigInteger('adminbillingpmttype_id');
             $table->dateTime('dateservice');
             $table->double('chgamount');
             $table->double('chgamounttax');
@@ -27,8 +27,8 @@ class CreateBillingDetailsTable extends Migration
             $table->timestamps();
             
             $table->foreign('billingmain_id')->references('id')->on('billingmain');
-            $table->foreign('adminbilllingchgtype_id')->references('id')->on('adminbilllingchgtype');
-            $table->foreign('adminbilllingpmttype_id')->references('id')->on('adminbilllingpmttype');
+            $table->foreign('adminbillingchgtype_id')->references('id')->on('adminbillingchgtype');
+            $table->foreign('adminbillingpmttype_id')->references('id')->on('adminbillingpmttype');
         });
     }
 
