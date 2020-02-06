@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class AdminClientRatingType extends Model
 {
     protected $table = 'adminclientratingtype';
+    protected $guarded = [];
 }

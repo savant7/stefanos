@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class AdminCrmType extends Model
 {
     protected $table = 'admincrmtype';
+    protected $guarded = [];
 }

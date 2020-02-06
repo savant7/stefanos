@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class ClientCampaign extends Model
 {
     protected $table = 'contactclientcampaign';
+    protected $guarded = [];
 }
