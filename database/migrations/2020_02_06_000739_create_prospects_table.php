@@ -48,11 +48,11 @@ class CreateProspectsTable extends Migration {
             $table->date('childbirthdate2')->nullable();
             $table->date('childbirthdate3')->nullable();
             $table->date('childbirthdate4')->nullable();
-            $table->bigInteger('relatedclient_id')->nullable();
-            $table->bigInteger('admincrmtype_id');
-            $table->bigInteger('adminclienttype_id');
-            $table->bigInteger('adminclientratingtype_id');
-            $table->bigInteger('adminleadtype_id');
+            $table->unsignedBigInteger('relatedclient_id')->nullable();
+            $table->unsignedBigInteger('admincrmtype_id');
+            $table->unsignedBigInteger('adminclienttype_id');
+            $table->unsignedBigInteger('adminclientratingtype_id');
+            $table->unsignedBigInteger('adminleadtype_id');
             $table->string('customfield1')->nullable();
             $table->string('customfield2')->nullable();
             $table->string('customfield3')->nullable();

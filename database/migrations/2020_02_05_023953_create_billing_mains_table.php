@@ -16,7 +16,7 @@ class CreateBillingMainsTable extends Migration
         Schema::create('billingmain', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->bigInteger('contactclient_id');
+            $table->unsignedBigInteger('contactclient_id');
             $table->dateTime('dateservice');
             $table->dateTime('datebilling');
             $table->dateTime('datepaid');

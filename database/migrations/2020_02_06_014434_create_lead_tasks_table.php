@@ -15,8 +15,8 @@ class CreateLeadTasksTable extends Migration
     {
         Schema::create('contactleadtask', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('contactleadmain_id');
-            $table->bigInteger('admintasktype_id');
+            $table->unsignedBigInteger('contactleadmain_id');
+            $table->unsignedBigInteger('admintasktype_id');
             $table->dateTime('scheduledate');
             $table->dateTime('sentdate');
             $table->string('emailheader');

@@ -15,8 +15,8 @@ class CreateContactTasksTable extends Migration
     {
         Schema::create('contactcontacttask', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('contactcontactmain_id');
-            $table->bigInteger('admintasktype_id');
+            $table->unsignedBigInteger('contactcontactmain_id');
+            $table->unsignedBigInteger('admintasktype_id');
             $table->dateTime('scheduledate');
             $table->dateTime('sentdate');
             $table->string('emailheader');

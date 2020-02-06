@@ -15,12 +15,12 @@ class CreateProspectCampaignsTable extends Migration
     {
         Schema::create('contactprospectcampaign', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('campaignmain_id');
-            $table->bigInteger('campaignschedule_id');
-            $table->bigInteger('contactprospectmain_id');
-            $table->bigInteger('admincampaigntype_id');
-            $table->bigInteger('campaigntemplate_id');
-            $table->bigInteger('admincrmtype_id');
+            $table->unsignedBigInteger('campaignmain_id');
+            $table->unsignedBigInteger('campaignschedule_id');
+            $table->unsignedBigInteger('contactprospectmain_id');
+            $table->unsignedBigInteger('admincampaigntype_id');
+            $table->unsignedBigInteger('campaigntemplate_id');
+            $table->unsignedBigInteger('admincrmtype_id');
             $table->integer('admincampaignmode');
             $table->string('templatesubject');
             $table->string('templatebody');

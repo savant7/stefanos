@@ -16,11 +16,11 @@ class CreateCampaignSchedulesTable extends Migration
         Schema::create('campaignschedule', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->bigInteger('campaignmain_id');
-            $table->bigInteger('admincampaigntype_id');
-            $table->bigInteger('admincrmtype_id');
+            $table->unsignedBigInteger('campaignmain_id');
+            $table->unsignedBigInteger('admincampaigntype_id');
+            $table->unsignedBigInteger('admincrmtype_id');
             $table->integer('admincampaignmode');
-            $table->bigInteger('campaigntemplate_id');
+            $table->unsignedBigInteger('campaigntemplate_id');
             $table->string('templatesubject');
             $table->string('templatebody');
             $table->date('scheduledate');
@@ -29,10 +29,10 @@ class CreateCampaignSchedulesTable extends Migration
             $table->time('senttime');
             $table->integer('sendcount');
             $table->boolean('transferedflag');
-            $table->bigInteger('contactclientmain_id');
-            $table->bigInteger('contactprospectmain_id');
-            $table->bigInteger('contactleadmain_id');
-            $table->bigInteger('contactcontactmain_id');
+            $table->unsignedBigInteger('contactclientmain_id');
+            $table->unsignedBigInteger('contactprospectmain_id');
+            $table->unsignedBigInteger('contactleadmain_id');
+            $table->unsignedBigInteger('contactcontactmain_id');
             $table->boolean('completeflag');
             $table->string('notes');
             $table->boolean('active');

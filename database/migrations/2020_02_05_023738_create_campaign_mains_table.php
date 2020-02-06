@@ -16,9 +16,9 @@ class CreateCampaignMainsTable extends Migration
         Schema::create('campaignmain', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->bigInteger('admincampaigntype_id');
-            $table->bigInteger('campaignmode');
-            $table->bigInteger('admincrmtype_id');
+            $table->unsignedBigInteger('admincampaigntype_id');
+            $table->unsignedBigInteger('campaignmode');
+            $table->unsignedBigInteger('admincrmtype_id');
             $table->date('startdate');
             $table->date('enddate');
             $table->text('notes');

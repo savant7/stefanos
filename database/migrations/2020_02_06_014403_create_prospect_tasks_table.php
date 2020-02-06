@@ -15,8 +15,8 @@ class CreateProspectTasksTable extends Migration
     {
         Schema::create('contactprospecttask', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('contactprospectmain_id');
-            $table->bigInteger('admintasktype_id');
+            $table->unsignedBigInteger('contactprospectmain_id');
+            $table->unsignedBigInteger('admintasktype_id');
             $table->dateTime('scheduledate');
             $table->dateTime('sentdate');
             $table->string('emailheader');

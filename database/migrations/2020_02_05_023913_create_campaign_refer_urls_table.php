@@ -15,10 +15,10 @@ class CreateCampaignReferUrlsTable extends Migration
     {
         Schema::create('campaignreferurl', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('campaignmain_id');
+            $table->unsignedBigInteger('campaignmain_id');
             $table->string('name');
             $table->string('referurl');
-            $table->bigInteger('sendcount');
+            $table->unsignedBigInteger('sendcount');
             $table->text('notes');
             $table->boolean('active');
             $table->timestamps();

@@ -16,9 +16,9 @@ class CreateBillingDetailsTable extends Migration
         Schema::create('billingdetails', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->bigInteger('billingmain_id');
-            $table->bigInteger('adminbilllingchgtype_id');
-            $table->bigInteger('adminbilllingpmttype_id');
+            $table->unsignedBigInteger('billingmain_id');
+            $table->unsignedBigInteger('adminbilllingchgtype_id');
+            $table->unsignedBigInteger('adminbilllingpmttype_id');
             $table->dateTime('dateservice');
             $table->double('chgamount');
             $table->double('chgamounttax');
