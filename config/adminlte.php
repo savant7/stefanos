@@ -171,7 +171,7 @@ return [
         ['header' => 'DASHBOARD'],
         [
             'text' => 'Dashboard',
-            'url' => '#',
+            'url' => '/home',
             'icon' => 'fas fa-fw fa-tachometer-alt',
         ],
         [
@@ -181,12 +181,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Client List',
-                    'url' => '#',
+                    'url' => '/clients',
                     'icon' => 'fas fa-fw fa-users',
                 ],
                 [
                     'text' => 'Add Client',
-                    'url' => '#',
+                    'url' => '/client/create',
                     'icon' => 'fas fa-fw fa-user-plus',
                 ],
             ]
@@ -198,12 +198,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Prospect List',
-                    'url' => '#',
+                    'url' => '/prospects',
                     'icon' => 'fas fa-fw fa-users',
                 ],
                 [
                     'text' => 'Add Prospect',
-                    'url' => '#',
+                    'url' => '/prospect/create',
                     'icon' => 'fas fa-fw fa-user-plus',
                 ],
             ]
@@ -215,12 +215,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Web Lead List',
-                    'url' => '#',
+                    'url' => '/leads',
                     'icon' => 'fas fa-fw fa-list',
                 ],
                 [
                     'text' => 'Add Web Lead',
-                    'url' => '#',
+                    'url' => '/lead/create',
                     'icon' => 'fas fa-fw fa-folder-plus',
                 ],
             ]
@@ -232,12 +232,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Contact List',
-                    'url' => '#',
+                    'url' => '/contacts',
                     'icon' => 'fas fa-fw fa-user',
                 ],
                 [
                     'text' => 'Add Contact',
-                    'url' => '#',
+                    'url' => '/contact/create',
                     'icon' => 'fas fa-fw fa-address-card',
                 ],
             ]

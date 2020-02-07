@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
             'firstname' => 'James',
             'lastname' => 'Johnson',
             'email' => 'james@james.com',
-            'password' => 'james',
+            'password' => '$2y$10$.efq1Z1rRdn2AA56oTAXbeEHfX13ULSGZ1XgjbDfnKCSw239LIsOC',
             'title' => 'Mr',
         ]);
          $this->call(AdminBillingChgTypeTable::class);

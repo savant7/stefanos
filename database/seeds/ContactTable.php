@@ -16,6 +16,8 @@ class ContactTable extends Seeder
             'lastname1' => 'David',
             'firstname2' => 'Joseph',
             'lastname1' => 'David',
+            'email1' => 'david@abc.com',
+            'phone1' => '234.456.3211',
             'address1' => '123 Nowhere Place',
             'address2' => 'Unit 2',
             'addresscity' => 'Cloud City',
