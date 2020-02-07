@@ -16,6 +16,7 @@ class CreateClientsTable extends Migration
     {
         Schema::create('contactclientmain', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
             $table->string('firstname1')->nullable();
             $table->string('lastname1')->nullable();
             $table->string('firstname2')->nullable();
@@ -36,6 +37,7 @@ class CreateClientsTable extends Migration
             $table->string('employername')->nullable();
             $table->string('employertitle')->nullable();
             $table->string('employeraddress1')->nullable();
+            $table->string('employeraddress2')->nullable();
             $table->string('employeraddresscity')->nullable();
             $table->string('employeraddressprov')->nullable();
             $table->string('employeraddresspostal')->nullable();
@@ -77,7 +79,7 @@ class CreateClientsTable extends Migration
             $table->foreign('adminclienttype_id')->references('id')->on('adminclienttype');
             $table->foreign('adminclientratingtype_id')->references('id')->on('adminclientratingtype');
             $table->foreign('adminleadtype_id')->references('id')->on('adminleadtype');
-//            $table->foreign('')->references('id')->on('');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

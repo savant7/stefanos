@@ -11,6 +11,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        \App\User::create([
+            'firstname' => 'James',
+            'lastname' => 'Johnson',
+            'email' => 'james@james.com',
+            'password' => 'james',
+            'title' => 'Mr',
+        ]);
          $this->call(AdminBillingChgTypeTable::class);
+         $this->call(AdminBillingPmtTypeTable::class);
+         $this->call(AdminCampaignTypeTable::class);
+         $this->call(AdminClientRatingTypeTable::class);
+         $this->call(AdminClientTypeTable::class);
+         $this->call(AdminCrmTypeTable::class);
+         $this->call(AdminLeadTypeTable::class);
+         $this->call(AdminTaskTypeTable::class);
+         $this->call(ClientTable::class);
+         $this->call(ContactTable::class);
+         $this->call(LeadTable::class);
+         $this->call(ProspectTable::class);
     }
 }
