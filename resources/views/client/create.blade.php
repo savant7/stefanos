@@ -1,4 +1,4 @@
-@extends('layouts.page')
+@extends('adminlte::page')
 
 @section('title', 'Add new Client')
 
