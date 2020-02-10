@@ -11,17 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resources([
-    'clients' => 'ClientController',
-    'contacts' => 'ContactController',
-    'prospects' => 'ProspectController',
-    'leads' => 'LeadController',
-]);
+Route::middleware('auth')->group(function(){
+    Route::resources([
+        'clients' => 'ClientController',
+        'contacts' => 'ContactController',
+        'prospects' => 'ProspectController',
+        'leads' => 'LeadController',
+    ]);
+    
+});

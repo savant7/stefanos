@@ -181,12 +181,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Client List',
-                    'url' => '/clients',
+                    'route' => 'clients.index',
                     'icon' => 'fas fa-fw fa-users',
                 ],
                 [
                     'text' => 'Add Client',
-                    'url' => '/client/create',
+                    'route' => 'clients.create',
                     'icon' => 'fas fa-fw fa-user-plus',
                 ],
             ]
@@ -198,12 +198,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Prospect List',
-                    'url' => '/prospects',
+                    'route' => 'prospects.index',
                     'icon' => 'fas fa-fw fa-users',
                 ],
                 [
                     'text' => 'Add Prospect',
-                    'url' => '/prospect/create',
+                    'route' => 'prospects.create',
                     'icon' => 'fas fa-fw fa-user-plus',
                 ],
             ]
@@ -215,12 +215,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Web Lead List',
-                    'url' => '/leads',
+                    'route' => 'leads.index',
                     'icon' => 'fas fa-fw fa-list',
                 ],
                 [
                     'text' => 'Add Web Lead',
-                    'url' => '/lead/create',
+                    'route' => 'leads.create',
                     'icon' => 'fas fa-fw fa-folder-plus',
                 ],
             ]
@@ -232,12 +232,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Contact List',
-                    'url' => '/contacts',
+                    'route' => 'contacts.index',
                     'icon' => 'fas fa-fw fa-user',
                 ],
                 [
                     'text' => 'Add Contact',
-                    'url' => '/contact/create',
+                    'route' => 'contacts.create',
                     'icon' => 'fas fa-fw fa-address-card',
                 ],
             ]
@@ -594,12 +594,17 @@ return [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
+                    'location' => '//cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js',
                 ],
                 [
                     'type' => 'css',
                     'asset' => false,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
+                    'location' => '//cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '/vendor/plugins/select2-bootstrap4.min.css',
                 ],
             ],
         ],
@@ -622,6 +627,22 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                ],
+            ],
+        ],
+        [
+            'name' => 'Toastr',
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css',
                 ],
             ],
         ],

@@ -6,6 +6,7 @@
 <h1>Client List</h1>
 @stop
 @section('plugins.Datatables', true)
+@section('plugins.Toastr', true)
 @section('content')
 <div class="row">
     <div class="col-12">
@@ -38,7 +39,7 @@
                             <td> 
                                 <div class="btn-group">
                                     <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                    <a href="" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                    <a href="" class="btn btn-danger nodelete"><i class="fas fa-trash"></i></a>
                                 </div>
                             </td>
                         </tr>
@@ -74,6 +75,11 @@
       "ordering": true,
       "info": true,
       "autoWidth": false,
+    });
+    
+    $('.nodelete').click(function(e) {
+        e.preventDefault();
+        toastr.error('Delete operation not allowed');
     });
   });
 </script>

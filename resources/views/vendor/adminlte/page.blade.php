@@ -186,6 +186,14 @@
 
 @section('adminlte_js')
     <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+    @if ($errors->any())
+    @section('plugins.Toastr', true)
+    <script>
+        @foreach ($errors->all() as $error)
+            toastr.error(`{{ $error }}`);
+        @endforeach
+    </script>
+    @endif
     @stack('js')
     @yield('js')
 @stop

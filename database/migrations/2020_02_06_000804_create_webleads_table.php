@@ -18,8 +18,8 @@ class CreateWebleadsTable extends Migration
         Schema::create('contactleadmain', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->string('firstname1')->nullable();
-            $table->string('lastname1')->nullable();
+            $table->string('firstname1');
+            $table->string('lastname1');
             $table->string('firstname2')->nullable();
             $table->string('lastname2')->nullable();
             $table->string('address1')->nullable();
