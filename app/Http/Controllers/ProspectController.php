@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Prospect;
 use Illuminate\Http\Request;
+use Auth;
 
 class ProspectController extends Controller
 {
@@ -14,7 +15,7 @@ class ProspectController extends Controller
      */
     public function index()
     {
-        $prospects = Prospect::orderBy('active', 'desc')->get();
+        $prospects = Prospect::where('user_id',Auth::id())->orderBy('active', 'desc')->get();
         return view('prospect.index', compact('prospects'));
     }
 

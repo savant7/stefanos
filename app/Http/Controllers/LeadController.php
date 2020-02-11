@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Lead;
 use Illuminate\Http\Request;
-
+use Auth;
 class LeadController extends Controller
 {
     /**
@@ -14,7 +14,7 @@ class LeadController extends Controller
      */
     public function index()
     {
-        $leads = Lead::orderBy('active', 'desc')->get();
+        $leads = Lead::where('user_id',Auth::id())->orderBy('active', 'desc')->get();
         return view('lead.index', compact('leads'));
     }
 

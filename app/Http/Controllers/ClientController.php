@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use Illuminate\Http\Request;
+use Auth;
 
 class ClientController extends Controller
 {
@@ -14,7 +15,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::orderBy('active', 'desc')->get();
+        $clients = Client::where('user_id',Auth::id())->orderBy('active', 'desc')->get();
         return view('client.index', compact('clients'));
     }
 

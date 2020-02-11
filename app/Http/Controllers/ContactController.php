@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use Illuminate\Http\Request;
-
+use Auth;
 class ContactController extends Controller
 {
     /**
@@ -14,7 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::orderBy('active', 'desc')->get();
+        $contacts = Contact::where('user_id',Auth::id())->orderBy('active', 'desc')->get();
         return view('contact.index', compact('contacts'));
     }
 
