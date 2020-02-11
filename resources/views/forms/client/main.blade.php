@@ -5,8 +5,8 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
-                <div class="card-header" data-card-widget="collapse">
+            <div class="card">
+                <div class="card-header">
                     <h3 class="card-title">Name</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -49,8 +49,8 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
-                <div class="card-header" data-card-widget="collapse">
+            <div class="card">
+                <div class="card-header">
                     <h3 class="card-title">Address</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -86,8 +86,8 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
-                <div class="card-header" data-card-widget="collapse">
+            <div class="card">
+                <div class="card-header">
                     <h3 class="card-title">CRM</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -149,8 +149,8 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
-                <div class="card-header" data-card-widget="collapse">
+            <div class="card">
+                <div class="card-header">
                     <h3 class="card-title">Email</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -182,8 +182,8 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
-                <div class="card-header" data-card-widget="collapse">
+            <div class="card">
+                <div class="card-header">
                     <h3 class="card-title">Birthday</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -207,8 +207,8 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
-                <div class="card-header" data-card-widget="collapse">
+            <div class="card">
+                <div class="card-header">
                     <h3 class="card-title">Phones</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -240,8 +240,8 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
-                <div class="card-header" data-card-widget="collapse">
+            <div class="card">
+                <div class="card-header">
                     <h3 class="card-title">Employer</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -289,8 +289,8 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
-                <div class="card-header" data-card-widget="collapse">
+            <div class="card">
+                <div class="card-header">
                     <h3 class="card-title">Children</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -338,8 +338,8 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
-                <div class="card-header" data-card-widget="collapse">
+            <div class="card">
+                <div class="card-header">
                     <h3 class="card-title">Custom Fields</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -395,8 +395,8 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
-                <div class="card-header" data-card-widget="collapse">
+            <div class="card">
+                <div class="card-header">
                     <h3 class="card-title">Notes</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
