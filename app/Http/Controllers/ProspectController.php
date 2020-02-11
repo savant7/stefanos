@@ -14,7 +14,7 @@ class ProspectController extends Controller
      */
     public function index()
     {
-        $prospects = Prospect::all();
+        $prospects = Prospect::orderBy('active', 'desc')->get();
         return view('prospect.index', compact('prospects'));
     }
 
@@ -90,6 +90,8 @@ class ProspectController extends Controller
             $data['relatedclient_id'] = null;
         
         Prospect::where('id', $prospect->id)->update($data);
+        $prospect->relatedclient_id = $data['relatedclient_id'];
+        $prospect->save();
         return redirect()->route('prospects.edit', ['prospect' => $prospect->id])->with('success', "Prospect updated successfully");
     }
 

@@ -14,7 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::all();
+        $contacts = Contact::orderBy('active', 'desc')->get();
         return view('contact.index', compact('contacts'));
     }
 
@@ -90,6 +90,9 @@ class ContactController extends Controller
             $data['relatedclient_id'] = null;
         
         Contact::where('id', $contact->id)->update($data);
+        $contact->relatedclient_id = $data['relatedclient_id'];
+        $contact->save();
+        
         return redirect()->route('contacts.edit', ['contact' => $contact->id])->with('success', "Contact updated successfully");
     }
 

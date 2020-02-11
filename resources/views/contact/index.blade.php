@@ -11,14 +11,24 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Contact List</h3>
+                <h3 class="card-title">
+                    <a  class="btn btn-info" href="{{ route('contacts.create')}}">Add New</a>
+                    <a  class="btn btn-warning" href="#">Schedule Email</a>
+                </h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
                 <table id="clients" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox" >
+                                        <input id="check-all" class="custom-control-input" type="checkbox" />
+                                        <label for="check-all" class="custom-control-label">&nbsp;</label>
+                                    </div>
+                                </div>
+                            </th>
                             <th>Firstname</th>
                             <th>Lastname</th>
                             <th>Phone</th>
@@ -30,7 +40,14 @@
                         
                         @foreach($contacts as $c)
                         <tr>
-                            <td>..</td>
+                            <td>
+                                 <div class="form-group">
+                                    <div class="custom-control custom-checkbox" >
+                                        <input id="{{$c->id}}" value="o" class="custom-control-input check-item" type="checkbox" />
+                                        <label for="{{$c->id}}" class="custom-control-label">&nbsp;</label>
+                                    </div>
+                                </div>
+                            </td>
                             <td>{{$c->firstname1}}</td>
                             <td>{{$c->lastname1}}</td>
                             <td>{{$c->phone1}}</td>
@@ -70,10 +87,18 @@
     $('#clients').DataTable({
       "paging": true,
       "lengthChange": false,
-      "searching": false,
+      "searching": true,
       "ordering": true,
       "info": true,
       "autoWidth": false,
+    });
+    
+    $('.nodelete').click(function(e) {
+        e.preventDefault();
+        toastr.error('No deleting allowed.  Make the record Inactive to appear at bottom of list.');
+  });
+    $('#check-all').on('click', function(){
+        $('.check-item').click();
     });
   });
 </script>

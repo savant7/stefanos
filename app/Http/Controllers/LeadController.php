@@ -14,7 +14,7 @@ class LeadController extends Controller
      */
     public function index()
     {
-        $leads = Lead::all();
+        $leads = Lead::orderBy('active', 'desc')->get();
         return view('lead.index', compact('leads'));
     }
 
@@ -90,6 +90,8 @@ class LeadController extends Controller
             $data['relatedclient_id'] = null;
         
         Lead::where('id', $lead->id)->update($data);
+        $lead->relatedclient_id = $data['relatedclient_id'];
+        $lead->save();
         return redirect()->route('leads.edit', ['lead' => $lead->id])->with('success', "Lead updated successfully");
     }
 

@@ -18,7 +18,11 @@
                         <div class="form-group col-md-12">
                             <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
                                 <input name='active' value='0' type="hidden" />
+                                @if($item)
                                 <input value="1" name="active" {{$item && $item->active ?'checked' : ''}} type="checkbox" class="custom-control-input" id="active">
+                                @else
+                                <input value="1" name="active" checked type="checkbox" class="custom-control-input" id="active">
+                                @endif
                                 <label class="custom-control-label" for="active">Status:</label>
                             </div>
                         </div>
@@ -98,9 +102,13 @@
                             <select class="form-control select2bs4" name="relatedclient_id" >
                                 <option value="none" @if($item && !$item->relatedclient_id)selected @endif>None</option>
                                 @foreach(App\Client::where('user_id', Auth::id())->get() as $c)
-                                <option value="{{$c->id}}" @if($item && $item->relatedclient_id === $c->id)selected @endif>{{$c->firstname1}} {{$c->lastname1}}</option>
+                                <option value="{{$c->id}}" @if($item && $item->relatedclient_id === $c->id)selected {{$cname = $c->firstname1 . ' ' . $c->lastname1 }} @endif>{{$c->firstname1}} {{$c->lastname1}}</option>
                                 @endforeach
                             </select>
+                            @if($item && $item->relatedclient_id)
+                            <br>
+                            <a target="_blank" class="btn btn-success" href="{{ route($type .'s.show', [$type => $item->relatedclient_id])}}">View {{$cname}}</a>
+                            @endif
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-form-label">CRM Type:</label>
