@@ -49,7 +49,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary collapsed-card">
+            <div class="card card-primary">
                 <div class="card-header" data-card-widget="collapse">
                     <h3 class="card-title">Address</h3>
                     <div class="card-tools">
@@ -86,7 +86,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary collapsed-card">
+            <div class="card card-primary">
                 <div class="card-header" data-card-widget="collapse">
                     <h3 class="card-title">CRM</h3>
                     <div class="card-tools">
@@ -149,7 +149,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary collapsed-card">
+            <div class="card card-primary">
                 <div class="card-header" data-card-widget="collapse">
                     <h3 class="card-title">Email</h3>
                     <div class="card-tools">
@@ -182,7 +182,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary collapsed-card">
+            <div class="card card-primary">
                 <div class="card-header" data-card-widget="collapse">
                     <h3 class="card-title">Birthday</h3>
                     <div class="card-tools">
@@ -207,7 +207,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary collapsed-card">
+            <div class="card card-primary">
                 <div class="card-header" data-card-widget="collapse">
                     <h3 class="card-title">Phones</h3>
                     <div class="card-tools">
@@ -240,7 +240,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary collapsed-card">
+            <div class="card card-primary">
                 <div class="card-header" data-card-widget="collapse">
                     <h3 class="card-title">Employer</h3>
                     <div class="card-tools">
@@ -289,7 +289,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary collapsed-card">
+            <div class="card card-primary">
                 <div class="card-header" data-card-widget="collapse">
                     <h3 class="card-title">Children</h3>
                     <div class="card-tools">
@@ -338,7 +338,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary collapsed-card">
+            <div class="card card-primary">
                 <div class="card-header" data-card-widget="collapse">
                     <h3 class="card-title">Custom Fields</h3>
                     <div class="card-tools">
@@ -395,7 +395,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary collapsed-card">
+            <div class="card card-primary">
                 <div class="card-header" data-card-widget="collapse">
                     <h3 class="card-title">Notes</h3>
                     <div class="card-tools">
