@@ -14,7 +14,7 @@ class LeadController extends Controller
      */
     public function index()
     {
-        $leads = Lead::where('user_id',Auth::id())->orderBy('active', 'desc')->get();
+        $leads = Lead::all();
         return view('lead.index', compact('leads'));
     }
 

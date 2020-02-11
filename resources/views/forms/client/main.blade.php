@@ -105,9 +105,9 @@
                                 <option value="{{$c->id}}" @if($item && $item->relatedclient_id === $c->id)selected {{$cname = $c->firstname1 . ' ' . $c->lastname1 }} @endif>{{$c->firstname1}} {{$c->lastname1}}</option>
                                 @endforeach
                             </select>
-                            @if($item && $item->relatedclient_id)
+                            @if($item && isset($cname))
                             <br>
-                            <a target="_blank" class="btn btn-success" href="{{ route($type .'s.show', [$type => $item->relatedclient_id])}}">View {{$cname}}</a>
+                            <a target="_blank" class="btn btn-success" href="{{ route($type .'s.show', [$type => $item->relatedclient_id])}}">View {{$cname ?? ''}}</a>
                             @endif
                         </div>
                         <div class="form-group col-md-6">

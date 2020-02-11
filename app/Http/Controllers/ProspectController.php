@@ -15,7 +15,7 @@ class ProspectController extends Controller
      */
     public function index()
     {
-        $prospects = Prospect::where('user_id',Auth::id())->orderBy('active', 'desc')->get();
+        $prospects = Prospect::all();
         return view('prospect.index', compact('prospects'));
     }
 
@@ -44,7 +44,7 @@ class ProspectController extends Controller
         $data = $request->all();
         if($data['relatedclient_id'] == 'none')
             $data['relatedclient_id'] = null;
-        $prospect = Client::create($data);
+        $prospect = Prospect::create($data);
         
         return redirect()->route('prospects.index');
     }

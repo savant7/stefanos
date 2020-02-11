@@ -14,7 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::where('user_id',Auth::id())->orderBy('active', 'desc')->get();
+        $contacts = Contact::all();
         return view('contact.index', compact('contacts'));
     }
 
