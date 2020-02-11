@@ -25,7 +25,7 @@ class LeadController extends Controller
      */
     public function create()
     {
-        //
+        return view('lead.create', ['item' => null]);
     }
 
     /**
@@ -36,7 +36,16 @@ class LeadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'firstname1' => ['required',],
+            'lastname1' => ['required'],
+        ]);
+        $data = $request->all();
+        if($data['relatedclient_id'] == 'none')
+            $data['relatedclient_id'] = null;
+        $lead = Lead::create($data);
+        
+        return redirect()->route('leads.index');
     }
 
     /**
@@ -47,7 +56,7 @@ class LeadController extends Controller
      */
     public function show(Lead $lead)
     {
-        //
+        return view('lead.show', ['item' => $lead]);
     }
 
     /**
@@ -58,7 +67,7 @@ class LeadController extends Controller
      */
     public function edit(Lead $lead)
     {
-        //
+        return view('lead.show', ['item' => $lead]);
     }
 
     /**
@@ -70,7 +79,18 @@ class LeadController extends Controller
      */
     public function update(Request $request, Lead $lead)
     {
-        //
+        $request->validate([
+            'firstname1' => ['required',],
+            'lastname1' => ['required'],
+        ]);
+        
+        $data = $request->except(['_method', '_token']);
+        
+        if($data['relatedclient_id'] == 'none')
+            $data['relatedclient_id'] = null;
+        
+        Lead::where('id', $lead->id)->update($data);
+        return redirect()->route('leads.edit', ['lead' => $lead->id])->with('success', "Lead updated successfully");
     }
 
     /**

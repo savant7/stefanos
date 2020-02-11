@@ -25,7 +25,7 @@ class ProspectController extends Controller
      */
     public function create()
     {
-        //
+        return view('prospect.create', ['item' => null]);
     }
 
     /**
@@ -36,7 +36,16 @@ class ProspectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'firstname1' => ['required',],
+            'lastname1' => ['required'],
+        ]);
+        $data = $request->all();
+        if($data['relatedclient_id'] == 'none')
+            $data['relatedclient_id'] = null;
+        $prospect = Client::create($data);
+        
+        return redirect()->route('prospects.index');
     }
 
     /**
@@ -47,7 +56,7 @@ class ProspectController extends Controller
      */
     public function show(Prospect $prospect)
     {
-        //
+        return view('prospect.show', ['item' => $prospect]);
     }
 
     /**
@@ -58,7 +67,7 @@ class ProspectController extends Controller
      */
     public function edit(Prospect $prospect)
     {
-        //
+        return view('prospect.show', ['item' => $prospect]);
     }
 
     /**
@@ -70,7 +79,18 @@ class ProspectController extends Controller
      */
     public function update(Request $request, Prospect $prospect)
     {
-        //
+        $request->validate([
+            'firstname1' => ['required',],
+            'lastname1' => ['required'],
+        ]);
+        
+        $data = $request->except(['_method', '_token']);
+        
+        if($data['relatedclient_id'] == 'none')
+            $data['relatedclient_id'] = null;
+        
+        Prospect::where('id', $prospect->id)->update($data);
+        return redirect()->route('prospects.edit', ['prospect' => $prospect->id])->with('success', "Prospect updated successfully");
     }
 
     /**

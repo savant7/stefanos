@@ -25,7 +25,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('client.create');
+        return view('client.create', ['item' => null]);
     }
 
     /**
@@ -36,12 +36,16 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
+        $request->validate([
             'firstname1' => ['required',],
             'lastname1' => ['required'],
         ]);
+        $data = $request->all();
+        if($data['relatedclient_id'] == 'none')
+            $data['relatedclient_id'] = null;
         $client = Client::create($data);
-        var_dump($client);
+        
+        return redirect()->route('clients.index');
     }
 
     /**
@@ -52,7 +56,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        //
+        return view('client.show', ['item' => $client]);
     }
 
     /**
@@ -63,7 +67,7 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        //
+        return view('client.show', ['item' => $client]);
     }
 
     /**
@@ -75,7 +79,18 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        //
+        $request->validate([
+            'firstname1' => ['required',],
+            'lastname1' => ['required'],
+        ]);
+        
+        $data = $request->except(['_method', '_token']);
+        
+        if($data['relatedclient_id'] == 'none')
+            $data['relatedclient_id'] = null;
+        
+        Client::where('id', $client->id)->update($data);
+        return redirect()->route('clients.edit', ['client' => $client->id])->with('success', "Client updated successfully");
     }
 
     /**

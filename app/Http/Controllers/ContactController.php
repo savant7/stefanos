@@ -25,7 +25,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('contact.create', ['item' => null]);
     }
 
     /**
@@ -36,7 +36,16 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'firstname1' => ['required',],
+            'lastname1' => ['required'],
+        ]);
+        $data = $request->all();
+        if($data['relatedclient_id'] == 'none')
+            $data['relatedclient_id'] = null;
+        Contact::create($data);
+        
+        return redirect()->route('contacts.index');
     }
 
     /**
@@ -47,7 +56,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        return view('contact.show', ['item' => $contact]);
     }
 
     /**
@@ -58,7 +67,7 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        //
+        return view('contact.show', ['item' => $contact]);
     }
 
     /**
@@ -70,7 +79,18 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
-        //
+        $request->validate([
+            'firstname1' => ['required',],
+            'lastname1' => ['required'],
+        ]);
+        
+        $data = $request->except(['_method', '_token']);
+        
+        if($data['relatedclient_id'] == 'none')
+            $data['relatedclient_id'] = null;
+        
+        Contact::where('id', $contact->id)->update($data);
+        return redirect()->route('contacts.edit', ['contact' => $contact->id])->with('success', "Contact updated successfully");
     }
 
     /**

@@ -38,8 +38,8 @@
                             <td>{{$c->email1}}</td>
                             <td> 
                                 <div class="btn-group">
-                                    <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                    <a href="" class="btn btn-danger nodelete"><i class="fas fa-trash"></i></a>
+                                    <a href="{{ route('clients.edit', ['client' => $c->id])}}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="btn btn-danger nodelete"><i class="fas fa-trash"></i></a>
                                 </div>
                             </td>
                         </tr>

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Add new Client')
+@section('title', 'Edit Client')
 
 @section('content_header')
 <h1>Add Client</h1>
@@ -35,7 +35,7 @@
                             </ul>
                         </div>
                         @endif
-                        @include('forms.client.main',['type' => 'client'])
+                        @include('forms.client.main', ['type' => 'client'])
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="tasks">

@@ -186,14 +186,19 @@
 
 @section('adminlte_js')
     <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
-    @if ($errors->any())
     @section('plugins.Toastr', true)
+    @if ($errors->any())
     <script>
         @foreach ($errors->all() as $error)
             toastr.error(`{{ $error }}`);
         @endforeach
     </script>
     @endif
+    @if(session()->get('success'))
+    <script>
+      toastr.success(`{{ session()->get('success') }} `);  
+    </script>
+  @endif
     @stack('js')
     @yield('js')
 @stop
