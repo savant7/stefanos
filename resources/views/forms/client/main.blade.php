@@ -2,7 +2,7 @@
     @csrf
     @if(isset($item)) @method('PATCH') @endif
     <input name="user_id" type="hidden" value="{{Auth::id()}}" />
-    <input name="active" type="hidden" value="1" />
+
     <div class="row">
         <div class="col-md-12">
             <div class="card card-primary">
@@ -15,6 +15,13 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                     <div class="row">
+                        <div class="form-group col-md-12">
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input name='active' value='0' type="hidden" />
+                                <input value="1" name="active" {{$item && $item->active ?'checked' : ''}} type="checkbox" class="custom-control-input" id="active">
+                                <label class="custom-control-label" for="active">Status:</label>
+                            </div>
+                        </div>
                         <div class="form-group col-md-6">
                             <label for="fname" class="col-form-label">First name:</label>
                             <input value="{{$item?$item->firstname1 : old('firstname1')}}" name="firstname1" class="form-control" id="fname" placeholder="Firstname" required>
