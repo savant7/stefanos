@@ -179,11 +179,11 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Birth Date 1:</label>
-                            <input value="{{$item?$item->birthdate1 : old('birthdate1')}}" name="birthdate1" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                            <input value="{{$item?$item->birthdate1 : old('birthdate1')}}" name="birthdate1" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Birth Date 2:</label>
-                            <input value="{{$item?$item->birthdate2 : old('birthdate2')}}" name="birthdate2" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                            <input value="{{$item?$item->birthdate2 : old('birthdate2')}}" name="birthdate2" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
                         </div>
                     </div>
                 </div>
@@ -290,7 +290,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Child Birthdate 1:</label>
-                            <input value="{{$item?$item->childbirthdate1 : old('childbirthdate1')}}" name="childbirthdate1" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                            <input value="{{$item?$item->childbirthdate1 : old('childbirthdate1')}}" name="childbirthdate1" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Child Name 2:</label>
@@ -298,7 +298,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Child Birthdate 2:</label>
-                            <input value="{{$item?$item->childbirthdate2 : old('childbirthdate2')}}" name="childbirthdate2" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                            <input value="{{$item?$item->childbirthdate2 : old('childbirthdate2')}}" name="childbirthdate2" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Child Name 3:</label>
@@ -306,7 +306,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Child Birthdate 3:</label>
-                            <input value="{{$item?$item->childbirthdate3 : old('childbirthdate3')}}" name="childbirthdate3" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                            <input value="{{$item?$item->childbirthdate3 : old('childbirthdate3')}}" name="childbirthdate3" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Child Name 4:</label>
@@ -314,7 +314,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Child Birthdate 4:</label>
-                            <input value="{{$item?$item->childbirthdate4 : old('childbirthdate4')}}" name="childbirthdate4" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                            <input value="{{$item?$item->childbirthdate4 : old('childbirthdate4')}}" name="childbirthdate4" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
                         </div>
                     </div>
                 </div>

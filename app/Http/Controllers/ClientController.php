@@ -90,6 +90,9 @@ class ClientController extends Controller
             $data['relatedclient_id'] = null;
         
         Client::where('id', $client->id)->update($data);
+        $client->relatedclient_id = $data['relatedclient_id'];
+        $client->save();
+        
         return redirect()->route('clients.edit', ['client' => $client->id])->with('success', "Client updated successfully");
     }
 
@@ -101,6 +104,6 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        //
+        return redirect()->route('clients.index')->with('error', "You cannot perform delete operation");
     }
 }
