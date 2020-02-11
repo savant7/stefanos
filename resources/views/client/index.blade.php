@@ -19,7 +19,14 @@
                 <table id="clients" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox" >
+                                        <input id="check-all" class="custom-control-input" type="checkbox" />
+                                        <label for="check-all" class="custom-control-label">&nbsp;</label>
+                                    </div>
+                                </div>
+                            </th>
                             <th>Firstname</th>
                             <th>Lastname</th>
                             <th>Phone</th>
@@ -31,7 +38,14 @@
                         
                         @foreach($clients as $c)
                         <tr>
-                            <td>..</td>
+                            <td>
+                                 <div class="form-group">
+                                    <div class="custom-control custom-checkbox" >
+                                        <input id="{{$c->id}}" value="o" class="custom-control-input check-item" type="checkbox" />
+                                        <label for="{{$c->id}}" class="custom-control-label">&nbsp;</label>
+                                    </div>
+                                </div>
+                            </td>
                             <td>{{$c->firstname1}}</td>
                             <td>{{$c->lastname1}}</td>
                             <td>{{$c->phone1}}</td>
@@ -79,7 +93,10 @@
     
     $('.nodelete').click(function(e) {
         e.preventDefault();
-        toastr.error('Delete operation not allowed');
+        toastr.error('No deleting allowed.  Make the record Inactive to appear at bottom of list.');
+    });
+    $('#check-all').on('click', function(){
+        $('.check-item').click();
     });
   });
 </script>

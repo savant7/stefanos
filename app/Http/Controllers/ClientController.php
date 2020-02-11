@@ -14,7 +14,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::all();
+        $clients = Client::orderBy('active', 'desc')->get();
         return view('client.index', compact('clients'));
     }
 
@@ -104,6 +104,6 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        return redirect()->route('clients.index')->with('error', "You cannot perform delete operation");
+        return redirect()->route('clients.index')->with('error', "No deleting allowed.  Make the record Inactive to appear at bottom of list.");
     }
 }
