@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Edit Client')
+@section('title', $title)
 
 @section('content_header')
-<h1>Add Client</h1>
+<h1>{{$title}}</h1>
 @stop
 @section('plugins.Select2', true)
 @section('content')
@@ -26,6 +26,7 @@
             <div class="card-body">
                 <div class="tab-content">
                     <div class="tab-pane active" id="main">
+                    {{--
                         @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -35,7 +36,8 @@
                             </ul>
                         </div>
                         @endif
-                        @include('forms.client.main', ['type' => 'client'])
+                        --}}
+                        @include('forms.client.main')
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="tasks">
@@ -83,91 +85,19 @@
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="children">
-                        <form class="form-horizontal">
-                            <div class="form-group row">
-                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                </div>
-                            </div>
-                        </form>
+                        @include('forms.client.children')
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="employment">
-                        <form class="form-horizontal">
-                            <div class="form-group row">
-                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                </div>
-                            </div>
-                        </form>
+                        @include('forms.client.employment')
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="customs">
-                        <form class="form-horizontal">
-                            <div class="form-group row">
-                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                </div>
-                            </div>
-                        </form>
+                        @include('forms.client.customs')
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="notes">
-                        <form class="form-horizontal">
-                            <div class="form-group row">
-                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                </div>
-                            </div>
-                        </form>
+                        @include('forms.client.notes')
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="billings">

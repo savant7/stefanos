@@ -56,7 +56,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        return view('contact.show', ['item' => $contact]);
+        return view('contact.show', ['item' => $contact, 'type' => 'contact']);
     }
 
     /**
@@ -67,7 +67,7 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        return view('contact.show', ['item' => $contact]);
+        return view('contact.show', ['item' => $contact, 'type' => 'contact']);
     }
 
     /**

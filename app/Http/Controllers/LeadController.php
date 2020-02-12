@@ -56,7 +56,7 @@ class LeadController extends Controller
      */
     public function show(Lead $lead)
     {
-        return view('lead.show', ['item' => $lead]);
+        return view('lead.show', ['item' => $lead, 'type' => 'lead']);
     }
 
     /**
@@ -67,7 +67,7 @@ class LeadController extends Controller
      */
     public function edit(Lead $lead)
     {
-        return view('lead.show', ['item' => $lead]);
+        return view('lead.show', ['item' => $lead, 'type' => 'lead']);
     }
 
     /**

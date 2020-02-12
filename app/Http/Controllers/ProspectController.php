@@ -57,7 +57,7 @@ class ProspectController extends Controller
      */
     public function show(Prospect $prospect)
     {
-        return view('prospect.show', ['item' => $prospect]);
+        return view('prospect.show', ['item' => $prospect, 'type' => 'prospect']);
     }
 
     /**
@@ -68,7 +68,7 @@ class ProspectController extends Controller
      */
     public function edit(Prospect $prospect)
     {
-        return view('prospect.show', ['item' => $prospect]);
+        return view('prospect.show', ['item' => $prospect, 'type' => 'prospect']);
     }
 
     /**

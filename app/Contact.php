@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Scopes\UserScope;
+use App\Scopes\ElementScope;
 
 class Contact extends Model {
 
@@ -13,7 +13,7 @@ class Contact extends Model {
     protected static function boot() {
         parent::boot();
 
-        static::addGlobalScope(new UserScope);
+        static::addGlobalScope(new ElementScope);
     }
 
 }

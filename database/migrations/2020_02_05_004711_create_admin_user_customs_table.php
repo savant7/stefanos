@@ -15,30 +15,33 @@ class CreateAdminUserCustomsTable extends Migration
     {
         Schema::create('adminusercustom', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('customfield1');
-            $table->string('customfield2');
-            $table->string('customfield3');
-            $table->string('customfield4');
-            $table->string('customfield5');
-            $table->string('customfield6');
-            $table->string('customfield7');
-            $table->string('customfield8');
-            $table->string('customfield9');
-            $table->string('customfield10');
-            $table->string('notelabel1');
-            $table->string('notelabel2');
-            $table->string('notelabel3');
-            $table->boolean('showcrmclient');
-            $table->boolean('showcrmprospect');
-            $table->boolean('showcrmlead');
-            $table->boolean('showcrmcontact');
-            $table->boolean('tabchildren');
-            $table->boolean('tabemployment');
-            $table->boolean('tabcustom');
-            $table->boolean('tabnote');
-            $table->boolean('tabbilling');
-            $table->boolean('tabcampaign');
+            $table->unsignedBigInteger('user_id');
+            $table->string('customfield1')->nullable();
+            $table->string('customfield2')->nullable();
+            $table->string('customfield3')->nullable();
+            $table->string('customfield4')->nullable();
+            $table->string('customfield5')->nullable();
+            $table->string('customfield6')->nullable();
+            $table->string('customfield7')->nullable();
+            $table->string('customfield8')->nullable();
+            $table->string('customfield9')->nullable();
+            $table->string('customfield10')->nullable();
+            $table->string('notelabel1')->nullable();
+            $table->string('notelabel2')->nullable();
+            $table->string('notelabel3')->nullable();
+            $table->boolean('showcrmclient')->default(1);
+            $table->boolean('showcrmprospect')->default(1);
+            $table->boolean('showcrmlead')->default(1);
+            $table->boolean('showcrmcontact')->default(1);
+            $table->boolean('tabchildren')->default(1);
+            $table->boolean('tabemployment')->default(1);
+            $table->boolean('tabcustom')->default(1);
+            $table->boolean('tabnote')->default(1);
+            $table->boolean('tabbilling')->default(1);
+            $table->boolean('tabcampaign')->default(1);
             $table->timestamps();
+            
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

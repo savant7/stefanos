@@ -242,7 +242,7 @@ return [
                 ],
             ]
         ],
-        ['header' => 'Activities'],
+        ['header' => 'ACTIVITIES'],
         [
             'text' => 'To Do Lists',
             'url' => '#',
@@ -456,6 +456,11 @@ return [
                         ],
                         [
                             'text' => 'Custom Fields',
+                            'url' => '#',
+                            'icon' => 'fab fa-fw fa-intercom',
+                        ],
+                        [
+                            'text' => 'Tab Views',
                             'url' => '#',
                             'icon' => 'fab fa-fw fa-intercom',
                         ],

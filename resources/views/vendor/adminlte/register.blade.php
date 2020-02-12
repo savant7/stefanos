@@ -33,21 +33,6 @@
                 {{ csrf_field() }}
 
                 <div class="input-group mb-3">
-                    <input type="text" name="title" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" value="{{ old('title') }}"
-                           placeholder="Title" autofocus>
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-male"></span>
-                        </div>
-                    </div>
-
-                    @if ($errors->has('title'))
-                        <div class="invalid-feedback">
-                            <strong>{{ $errors->first('title') }}</strong>
-                        </div>
-                    @endif
-                </div>
-                <div class="input-group mb-3">
                     <input type="text" name="firstname" class="form-control {{ $errors->has('firstname') ? 'is-invalid' : '' }}" value="{{ old('firstname') }}"
                            placeholder="First name" autofocus>
                     <div class="input-group-append">
@@ -119,33 +104,79 @@
                         </div>
                     @endif
                 </div>
+                
                 <div class="input-group mb-3">
-                    <input type="text" name="company" class="form-control {{ $errors->has('company') ? 'is-invalid' : '' }}" value="{{ old('company') }}"
-                           placeholder="Company" autofocus>
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-building"></span>
-                        </div>
-                    </div>
-
-                    @if ($errors->has('company'))
-                        <div class="invalid-feedback">
-                            <strong>{{ $errors->first('company') }}</strong>
-                        </div>
-                    @endif
-                </div>
-                <div class="input-group mb-3">
-                    <input type="text" name="address" class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" value="{{ old('address') }}"
-                           placeholder="Address" autofocus>
+                    <input type="text" name="address1" class="form-control {{ $errors->has('address1') ? 'is-invalid' : '' }}" value="{{ old('address1') }}"
+                           placeholder="Address 1" autofocus>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
                         </div>
                     </div>
 
-                    @if ($errors->has('address'))
+                    @if ($errors->has('address1'))
                         <div class="invalid-feedback">
-                            <strong>{{ $errors->first('address') }}</strong>
+                            <strong>{{ $errors->first('address1') }}</strong>
+                        </div>
+                    @endif
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" name="address2" class="form-control {{ $errors->has('address2') ? 'is-invalid' : '' }}" value="{{ old('address2') }}"
+                           placeholder="Address 2" autofocus>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+
+                    @if ($errors->has('address2'))
+                        <div class="invalid-feedback">
+                            <strong>{{ $errors->first('address2') }}</strong>
+                        </div>
+                    @endif
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" name="city" class="form-control {{ $errors->has('city') ? 'is-invalid' : '' }}" value="{{ old('city') }}"
+                           placeholder="City" autofocus>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-building"></span>
+                        </div>
+                    </div>
+
+                    @if ($errors->has('city'))
+                        <div class="invalid-feedback">
+                            <strong>{{ $errors->first('city') }}</strong>
+                        </div>
+                    @endif
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" name="province" class="form-control {{ $errors->has('province') ? 'is-invalid' : '' }}" value="{{ old('province') }}"
+                           placeholder="Province" autofocus>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-building"></span>
+                        </div>
+                    </div>
+
+                    @if ($errors->has('province'))
+                        <div class="invalid-feedback">
+                            <strong>{{ $errors->first('province') }}</strong>
+                        </div>
+                    @endif
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" name="postal" class="form-control {{ $errors->has('postal') ? 'is-invalid' : '' }}" value="{{ old('postal') }}"
+                           placeholder="Postal" autofocus>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-building"></span>
+                        </div>
+                    </div>
+
+                    @if ($errors->has('postal'))
+                        <div class="invalid-feedback">
+                            <strong>{{ $errors->first('postal') }}</strong>
                         </div>
                     @endif
                 </div>
