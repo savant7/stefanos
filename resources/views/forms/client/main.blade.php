@@ -197,11 +197,11 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Birth Date 1: @if(isset($item)){{age($item->birthdate1)}}@endif</label>
-                            <input value="{{$item->birthdate1?$item->birthdate1->format('m-d-Y') : old('birthdate1')}}" name="birthdate1" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="mm-dd-yyyy" data-mask>
+                            <input value="{{isset($item->birthdate1)?$item->birthdate1->format('m-d-Y') : old('birthdate1')}}" name="birthdate1" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="mm-dd-yyyy" data-mask>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Birth Date 2: @if(isset($item)){{age($item->birthdate2)}}  @endif</label>
-                            <input value="{{$item->birthdate2?$item->birthdate2->format('m-d-Y') : old('birthdate2')}}" name="birthdate2" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="mm-dd-yyyy" data-mask>
+                            <input value="{{isset($item->birthdate2)?$item->birthdate2->format('m-d-Y') : old('birthdate2')}}" name="birthdate2" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="mm-dd-yyyy" data-mask>
                         </div>
                     </div>
                 </div>
