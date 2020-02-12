@@ -4,17 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Prospect;
 use Illuminate\Http\Request;
-use Auth;
+use App\UserCustom;
+use App\ProspectTask;
+use App\ProspectCampaign;
 
-class ProspectController extends Controller
-{
+class ProspectController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         $prospects = Prospect::all();
         return view('prospect.index', compact('prospects'));
     }
@@ -24,9 +25,13 @@ class ProspectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('prospect.create', ['item' => null]);
+    public function create() {
+        $item = null;
+        $type = 'prospect';
+        $title = 'Add Prospect';
+        $ucustoms = UserCustom::first();
+        $labels = getLabels($ucustoms);
+        return view('client.show', compact('item', 'type', 'labels', 'title', 'ucustoms'));
     }
 
     /**
@@ -35,17 +40,16 @@ class ProspectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $request->validate([
             'firstname1' => ['required',],
             'lastname1' => ['required'],
         ]);
         $data = $request->all();
-        if($data['relatedclient_id'] == 'none')
+        if ($data['relatedclient_id'] == 'none')
             $data['relatedclient_id'] = null;
-        $prospect = Prospect::create($data);
-        
+        Prospect::create($data);
+
         return redirect()->route('prospects.index');
     }
 
@@ -55,9 +59,8 @@ class ProspectController extends Controller
      * @param  \App\Prospect  $prospect
      * @return \Illuminate\Http\Response
      */
-    public function show(Prospect $prospect)
-    {
-        return view('prospect.show', ['item' => $prospect, 'type' => 'prospect']);
+    public function show(Prospect $prospect) {
+        return $this->edit($prospect);
     }
 
     /**
@@ -66,9 +69,17 @@ class ProspectController extends Controller
      * @param  \App\Prospect  $prospect
      * @return \Illuminate\Http\Response
      */
-    public function edit(Prospect $prospect)
-    {
-        return view('prospect.show', ['item' => $prospect, 'type' => 'prospect']);
+    public function edit(Prospect $prospect) {
+        $item = $prospect;
+        $tasks = ProspectTask::where('contactprospectmain_id' , $prospect->id)->get();
+        $emails = ProspectCampaign::where('contactprospectmain_id' , $prospect->id)->get();
+        $campaigns = ProspectCampaign::where('contactprospectmain_id' , $prospect->id)->whereNotNull('sentdate')->get();
+        $billings = [];
+        $type = 'prospect';
+        $title = 'View / Edit Prospect';
+        $ucustoms = UserCustom::first();
+        $labels = getLabels($ucustoms);
+        return view('client.show', compact('item', 'type', 'labels', 'title', 'ucustoms', 'tasks', 'emails', 'campaigns', 'billings'));
     }
 
     /**
@@ -78,21 +89,19 @@ class ProspectController extends Controller
      * @param  \App\Prospect  $prospect
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Prospect $prospect)
-    {
-        $request->validate([
-            'firstname1' => ['required',],
-            'lastname1' => ['required'],
-        ]);
-        
+    public function update(Request $request, Prospect $prospect) {
+
         $data = $request->except(['_method', '_token']);
-        
-        if($data['relatedclient_id'] == 'none')
+
+        if (isset($data['relatedclient_id'])) {
+        if ($data['relatedclient_id'] == 'none')
             $data['relatedclient_id'] = null;
+            $prospect->relatedclient_id = $data['relatedclient_id'];
+        }
+        $prospect->save();
         
         Prospect::where('id', $prospect->id)->update($data);
-        $prospect->relatedclient_id = $data['relatedclient_id'];
-        $prospect->save();
+        
         return redirect()->route('prospects.edit', ['prospect' => $prospect->id])->with('success', "Prospect updated successfully");
     }
 
@@ -102,8 +111,8 @@ class ProspectController extends Controller
      * @param  \App\Prospect  $prospect
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Prospect $prospect)
-    {
-        //
+    public function destroy(Prospect $prospect) {
+        return redirect()->route('prospect.index')->with('error', "No deleting allowed.  Make the record Inactive to appear at bottom of list.");
     }
+
 }

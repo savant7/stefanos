@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Edit Contact')
+@section('title', $title)
 
 @section('content_header')
-<h1>Edit Contact</h1>
+<h1>{{$title}}</h1>
 @stop
 @section('plugins.Select2', true)
 @section('content')
@@ -13,206 +13,85 @@
             <div class="card-header p-2">
                 <ul class="nav nav-pills">
                     <li class="nav-item"><a class="nav-link active" href="#main" data-toggle="tab">Main</a></li>
+                    @if(isset($item))
                     <li class="nav-item"><a class="nav-link" href="#tasks" data-toggle="tab">Tasks</a></li>
+                    @endif
+                    @if(isset($item))
                     <li class="nav-item"><a class="nav-link" href="#emails" data-toggle="tab">Emails</a></li>
+                    @endif
+                    @if($ucustoms && $ucustoms->tabchildren)
                     <li class="nav-item"><a class="nav-link" href="#children" data-toggle="tab">Children</a></li>
+                    @endif
+                    @if($ucustoms && $ucustoms->tabemployment)
                     <li class="nav-item"><a class="nav-link" href="#employment" data-toggle="tab">Employment</a></li>
+                    @endif
+                    @if($ucustoms && $ucustoms->tabcustom)
                     <li class="nav-item"><a class="nav-link" href="#customs" data-toggle="tab">Customs</a></li>
+                    @endif
+                    @if($ucustoms && $ucustoms->tabnote)
                     <li class="nav-item"><a class="nav-link" href="#notes" data-toggle="tab">Notes</a></li>
+                    @endif
+                    @if(isset($item) && $ucustoms && $ucustoms->tabbilling && $type == 'client')
                     <li class="nav-item"><a class="nav-link" href="#billings" data-toggle="tab">Billings</a></li>
+                    @endif
+                    @if(isset($item) && $ucustoms && $ucustoms->tabcampaign)
                     <li class="nav-item"><a class="nav-link" href="#campaigns" data-toggle="tab">Campaigns</a></li>
+                    @endif
                 </ul>
             </div><!-- /.card-header -->
             <div class="card-body">
                 <div class="tab-content">
                     <div class="tab-pane active" id="main">
-                        @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
+                        @include('forms.client.main')
                         </div>
-                        @endif
-                        @include('forms.client.main', ['type' => 'contact'])
-                    </div>
                     <!-- /.tab-pane -->
+                    @if(isset($item))
                     <div class="tab-pane" id="tasks">
-                        <form class="form-horizontal">
-                            <div class="form-group row">
-                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
+                       @include('forms.client.task')
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    @endif
                     <!-- /.tab-pane -->
+                    @if(isset($item))
                     <div class="tab-pane" id="emails">
-                        <form class="form-horizontal">
-                            <div class="form-group row">
-                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
+                        @include('forms.client.email')
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    @endif
                     <!-- /.tab-pane -->
+                    @if($ucustoms && $ucustoms->tabchildren)
                     <div class="tab-pane" id="children">
-                        <form class="form-horizontal">
-                            <div class="form-group row">
-                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
+                        @include('forms.client.children')
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    @endif
                     <!-- /.tab-pane -->
+                    @if($ucustoms && $ucustoms->tabemployment)
                     <div class="tab-pane" id="employment">
-                        <form class="form-horizontal">
-                            <div class="form-group row">
-                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
+                        @include('forms.client.employment')
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    @endif
                     <!-- /.tab-pane -->
+                    @if($ucustoms && $ucustoms->tabcustom)
                     <div class="tab-pane" id="customs">
-                        <form class="form-horizontal">
-                            <div class="form-group row">
-                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
+                        @include('forms.client.customs')
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    @endif
                     <!-- /.tab-pane -->
+                    @if($ucustoms && $ucustoms->tabnote)
                     <div class="tab-pane" id="notes">
-                        <form class="form-horizontal">
-                            <div class="form-group row">
-                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
+                        @include('forms.client.notes')
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    @endif
                     <!-- /.tab-pane -->
+                    @if($type == 'client' && isset($item) && $ucustoms && $ucustoms->tabbilling)
                     <div class="tab-pane" id="billings">
-                        <form class="form-horizontal">
-                            <div class="form-group row">
-                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
+                        @include('forms.client.billing')
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    @endif
                     <!-- /.tab-pane -->
+                    @if(isset($item) && $ucustoms && $ucustoms->tabcampaign)
                     <div class="tab-pane" id="campaigns">
-                        <form class="form-horizontal">
-                            <div class="form-group row">
-                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
+                        @include('forms.client.campaign')
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    @endif
                     <!-- /.tab-pane -->
                 </div>
                 <!-- /.tab-content -->
