@@ -24,7 +24,12 @@ class ClientController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view('client.create', ['item' => null]);
+        $item = null;
+        $type = 'client';
+        $title = 'Add Client';
+        $ucustoms = AdminUserCustom::first();
+        $labels = getLabels($ucustoms);
+        return view('client.show', compact('item', 'type', 'labels', 'title', 'ucustoms'));
     }
 
     /**
