@@ -196,7 +196,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label class="col-form-label">Birth Date 1: @if(isset($item)){{age($item->birthdate2)}}@endif</label>
+                            <label class="col-form-label">Birth Date 1: @if(isset($item)){{age($item->birthdate1)}}@endif</label>
                             <input value="{{$item?$item->birthdate1 : old('birthdate1')}}" name="birthdate1" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
                         </div>
                         <div class="form-group col-md-6">
