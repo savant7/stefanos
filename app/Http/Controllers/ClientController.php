@@ -66,8 +66,9 @@ class ClientController extends Controller {
         $item = $client;
         $type = 'client';
         $title = 'View / Edit Client';
-        $labels = getLabels();
-        return view('client.show', compact('item', 'type', 'labels', 'title'));
+        $ucustoms = AdminUserCustom::first();
+        $labels = getLabels($ucustoms);
+        return view('client.show', compact('item', 'type', 'labels', 'title', 'ucustoms'));
     }
 
     /**

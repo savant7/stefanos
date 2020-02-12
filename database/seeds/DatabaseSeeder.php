@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'james@james.com',
             'password' => '$2y$10$.efq1Z1rRdn2AA56oTAXbeEHfX13ULSGZ1XgjbDfnKCSw239LIsOC',
         ]);
+        \App\AdminUserCustom::create(['user_id' => 1]);
          $this->call(AdminBillingChgTypeTable::class);
          $this->call(AdminBillingPmtTypeTable::class);
          $this->call(AdminCampaignTypeTable::class);

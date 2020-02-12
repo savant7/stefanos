@@ -15,12 +15,24 @@
                     <li class="nav-item"><a class="nav-link active" href="#main" data-toggle="tab">Main</a></li>
                     <li class="nav-item"><a class="nav-link" href="#tasks" data-toggle="tab">Tasks</a></li>
                     <li class="nav-item"><a class="nav-link" href="#emails" data-toggle="tab">Emails</a></li>
+                    @if($ucustoms && $ucustoms->tabchildren)
                     <li class="nav-item"><a class="nav-link" href="#children" data-toggle="tab">Children</a></li>
+                    @endif
+                    @if($ucustoms && $ucustoms->tabemployment)
                     <li class="nav-item"><a class="nav-link" href="#employment" data-toggle="tab">Employment</a></li>
+                    @endif
+                    @if($ucustoms && $ucustoms->tabcustom)
                     <li class="nav-item"><a class="nav-link" href="#customs" data-toggle="tab">Customs</a></li>
+                    @endif
+                    @if($ucustoms && $ucustoms->tabnote)
                     <li class="nav-item"><a class="nav-link" href="#notes" data-toggle="tab">Notes</a></li>
+                    @endif
+                    @if($ucustoms && $ucustoms->tabbilling)
                     <li class="nav-item"><a class="nav-link" href="#billings" data-toggle="tab">Billings</a></li>
+                    @endif
+                    @if($ucustoms && $ucustoms->tabcampaign)
                     <li class="nav-item"><a class="nav-link" href="#campaigns" data-toggle="tab">Campaigns</a></li>
+                    @endif
                 </ul>
             </div><!-- /.card-header -->
             <div class="card-body">
@@ -84,22 +96,31 @@
                         </form>
                     </div>
                     <!-- /.tab-pane -->
+                    @if($ucustoms && $ucustoms->tabchildren)
                     <div class="tab-pane" id="children">
                         @include('forms.client.children')
                     </div>
+                    @endif
                     <!-- /.tab-pane -->
+                    @if($ucustoms && $ucustoms->tabemployment)
                     <div class="tab-pane" id="employment">
                         @include('forms.client.employment')
                     </div>
+                    @endif
                     <!-- /.tab-pane -->
+                    @if($ucustoms && $ucustoms->tabcustom)
                     <div class="tab-pane" id="customs">
                         @include('forms.client.customs')
                     </div>
+                    @endif
                     <!-- /.tab-pane -->
+                    @if($ucustoms && $ucustoms->tabnote)
                     <div class="tab-pane" id="notes">
                         @include('forms.client.notes')
                     </div>
+                    @endif
                     <!-- /.tab-pane -->
+                    @if($ucustoms && $ucustoms->tabbilling)
                     <div class="tab-pane" id="billings">
                         <form class="form-horizontal">
                             <div class="form-group row">
@@ -121,7 +142,9 @@
                             </div>
                         </form>
                     </div>
+                    @endif
                     <!-- /.tab-pane -->
+                    @if($ucustoms && $ucustoms->tabcampaign)
                     <div class="tab-pane" id="campaigns">
                         <form class="form-horizontal">
                             <div class="form-group row">
@@ -143,6 +166,7 @@
                             </div>
                         </form>
                     </div>
+                    @endif
                     <!-- /.tab-pane -->
                 </div>
                 <!-- /.tab-content -->

@@ -19,11 +19,11 @@
                             <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
                                 <input name='active' value='0' type="hidden" />
                                 @if($item)
-                                <input value="1" name="active" {{$item && $item->active ?'checked' : ''}} type="checkbox" class="custom-control-input" id="active">
+                                <input value="1" name="active" {{$item && $item->active ?'checked' : ''}} type="checkbox" class="custom-control-input active" id="active">
                                 @else
                                 <input value="1" name="active" checked type="checkbox" class="custom-control-input" id="active">
                                 @endif
-                                <label class="custom-control-label" for="active">Status:</label>
+                                <label class="custom-control-label" for="active">Status</label>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
@@ -193,11 +193,11 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label class="col-form-label">Birth Date 1: {{age($item->birthdate2)}}</label>
+                            <label class="col-form-label">Birth Date 1: @if(isset($item)){{age($item->birthdate2)}}@endif</label>
                             <input value="{{$item?$item->birthdate1 : old('birthdate1')}}" name="birthdate1" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="col-form-label">Birth Date 2: {{age($item->birthdate2)}}</label>
+                            <label class="col-form-label">Birth Date 2: @if(isset($item)){{age($item->birthdate2)}}  @endif</label>
                             <input value="{{$item?$item->birthdate2 : old('birthdate2')}}" name="birthdate2" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
                         </div>
                     </div>
