@@ -88,6 +88,9 @@ class RegisterController extends Controller
     protected function registered(\Illuminate\Http\Request $request, $user) {
         UserCustom::create([
             'user_id' => $user->id,
+            'notelabel1' => 'General Notes',
+            'notelabel2' => 'Prospecting Notes',
+            'notelabel3' => 'Personal Notes',
         ]);
     }
 }

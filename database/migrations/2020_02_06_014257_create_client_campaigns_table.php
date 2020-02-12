@@ -26,9 +26,9 @@ class CreateClientCampaignsTable extends Migration
             $table->string('templatebody');
             $table->date('scheduledate');
             $table->time('scheduletime');
-            $table->date('sentdate');
-            $table->time('senttime');
-            $table->integer('sendcount');
+            $table->date('sentdate')->nullable();
+            $table->time('senttime')->nullable();
+            $table->integer('sendcount')->default(0);
             $table->boolean('transferedflag');
             $table->boolean('completeflag');
             $table->string('notes');

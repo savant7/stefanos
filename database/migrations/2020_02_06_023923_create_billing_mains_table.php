@@ -18,12 +18,12 @@ class CreateBillingMainsTable extends Migration
             $table->string('name');
             $table->unsignedBigInteger('contactclient_id');
             $table->dateTime('dateservice');
-            $table->dateTime('datebilling');
-            $table->dateTime('datepaid');
+            $table->dateTime('datebilling')->nullable();
+            $table->dateTime('datepaid')->nullable();
             $table->double('totalamount');
-            $table->double('totaltax');
+            $table->double('totaltax')->nullable();
             $table->boolean('paidinfull');
-            $table->string('notes');
+            $table->string('notes')->nullable();
             $table->boolean('system');
             $table->boolean('active');
             $table->timestamps();

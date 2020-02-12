@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Client;
 use Illuminate\Http\Request;
 use App\UserCustom;
-
+use App\ClientTask;
+use App\ClientCampaign;
+use App\BillingMain;
 class ClientController extends Controller {
 
     /**
@@ -69,11 +71,15 @@ class ClientController extends Controller {
      */
     public function edit(Client $client) {
         $item = $client;
+        $tasks = ClientTask::where('contactclientmain_id' , $client->id)->get();
+        $emails = ClientCampaign::where('contactclientmain_id' , $client->id)->get();
+        $campaigns = ClientCampaign::where('contactclientmain_id' , $client->id)->whereNotNull('sentdate')->get();
+        $billings = BillingMain::where('contactclient_id' , $client->id)->get();
         $type = 'client';
         $title = 'View / Edit Client';
         $ucustoms = UserCustom::first();
         $labels = getLabels($ucustoms);
-        return view('client.show', compact('item', 'type', 'labels', 'title', 'ucustoms'));
+        return view('client.show', compact('item', 'type', 'labels', 'title', 'ucustoms', 'tasks', 'emails', 'campaigns', 'billings'));
     }
 
     /**
