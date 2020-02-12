@@ -8,6 +8,7 @@ use App\UserCustom;
 use App\ClientTask;
 use App\ClientCampaign;
 use App\BillingMain;
+use Carbon\Carbon;
 class ClientController extends Controller {
 
     /**
@@ -46,6 +47,24 @@ class ClientController extends Controller {
             'lastname1' => ['required'],
         ]);
         $data = $request->all();
+        if(isset($data['birthdate1'])){
+            $data['birthdate1'] = Carbon::createFromFormat('m-d-Y', $data['birthdate1']);
+        }
+        if(isset($data['birthdate2'])){
+            $data['birthdate2'] = Carbon::createFromFormat('m-d-Y', $data['birthdate2']);
+        }
+        if(isset($data['childbirthdate1'])){
+            $data['childbirthdate1'] = Carbon::createFromFormat('m-d-Y', $data['childbirthdate1']);
+        }
+        if(isset($data['childbirthdate2'])){
+            $data['childbirthdate2'] = Carbon::createFromFormat('m-d-Y', $data['childbirthdate2']);
+        }
+        if(isset($data['childbirthdate3'])){
+            $data['childbirthdate3'] = Carbon::createFromFormat('m-d-Y', $data['childbirthdate3']);
+        }
+        if(isset($data['childbirthdate4'])){
+            $data['childbirthdate4'] = Carbon::createFromFormat('m-d-Y', $data['childbirthdate4']);
+        }
         if ($data['relatedclient_id'] == 'none')
             $data['relatedclient_id'] = null;
         Client::create($data);
@@ -99,6 +118,25 @@ class ClientController extends Controller {
             $client->relatedclient_id = $data['relatedclient_id'];
         }
         $client->save();
+        
+        if(isset($data['birthdate1'])){
+            $data['birthdate1'] = Carbon::createFromFormat('m-d-Y', $data['birthdate1']);
+        }
+        if(isset($data['birthdate2'])){
+            $data['birthdate2'] = Carbon::createFromFormat('m-d-Y', $data['birthdate2']);
+        }
+        if(isset($data['childbirthdate1'])){
+            $data['childbirthdate1'] = Carbon::createFromFormat('m-d-Y', $data['childbirthdate1']);
+        }
+        if(isset($data['childbirthdate2'])){
+            $data['childbirthdate2'] = Carbon::createFromFormat('m-d-Y', $data['childbirthdate2']);
+        }
+        if(isset($data['childbirthdate3'])){
+            $data['childbirthdate3'] = Carbon::createFromFormat('m-d-Y', $data['childbirthdate3']);
+        }
+        if(isset($data['childbirthdate4'])){
+            $data['childbirthdate4'] = Carbon::createFromFormat('m-d-Y', $data['childbirthdate4']);
+        }
 
         Client::where('id', $client->id)->update($data);
 

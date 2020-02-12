@@ -16,15 +16,15 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <label class="col-form-label">Note 1:</label>
+                            <label class="col-form-label">{{ $labels['notelabel1']}}:</label>
                             <textarea name="notes1" class="form-control">{{$item?$item->notes1 : old('notes1')}}</textarea>
                         </div>
                         <div class="form-group col-md-12">
-                            <label class="col-form-label">Note 2:</label>
+                            <label class="col-form-label">{{ $labels['notelabel2']}}:</label>
                             <textarea name="notes2" class="form-control">{{$item?$item->notes2 : old('notes2')}}</textarea>
                         </div>
                         <div class="form-group col-md-12">
-                            <label class="col-form-label">Note 3:</label>
+                            <label class="col-form-label">{{ $labels['notelabel3']}}:</label>
                             <textarea name="notes3" class="form-control">{{$item?$item->notes3 : old('notes3')}}</textarea>
                         </div>
                     </div>
