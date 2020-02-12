@@ -99,20 +99,23 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Related Client:</label>
+                            @foreach(App\Client::where('user_id', Auth::id())->get() as $c)
+                                 @if($item && $item->relatedclient_id === $c->id)@php $cname = $c->firstname1 . ' ' . $c->lastname1 @endphp @endif
+                            @endforeach
+                            @if($item && isset($cname))
+                            <a target="_blank" class="btn btn-success" href="{{ route($type .'s.show', [$type => $item->relatedclient_id])}}">View {{$cname ?? ''}}</a>
+                            @else
                             <select class="form-control select2bs4" name="relatedclient_id" >
                                 <option value="none" @if($item && !$item->relatedclient_id)selected @endif>None</option>
                                 @foreach(App\Client::where('user_id', Auth::id())->get() as $c)
                                 <option value="{{$c->id}}" @if($item && $item->relatedclient_id === $c->id)selected {{$cname = $c->firstname1 . ' ' . $c->lastname1 }} @endif>{{$c->firstname1}} {{$c->lastname1}}</option>
                                 @endforeach
                             </select>
-                            @if($item && isset($cname))
-                            <br>
-                            <a target="_blank" class="btn btn-success" href="{{ route($type .'s.show', [$type => $item->relatedclient_id])}}">View {{$cname ?? ''}}</a>
                             @endif
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-form-label">CRM Type:</label>
-                            <select class="form-control select2bs4" name="admincrmtype_id">
+                            <select class="form-control select2bs4" name="admincrmtype_id" @if(!empty($item)) disabled='disabled' @endif>
                                 @foreach(App\AdminCrmType::all() as $crm)
                                 <option value="{{$crm->id}}" @if($item && $item->admincrmtype_id === $crm->id)selected @endif>{{$crm->name}}</option>
                                 @endforeach

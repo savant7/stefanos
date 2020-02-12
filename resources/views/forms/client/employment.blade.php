@@ -15,22 +15,22 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label class="col-form-label">Name :</label>
+                            <label class="col-form-label">Company Name :</label>
                             <input value="{{$item?$item->employername : old('employername')}}" name="employername" class="form-control" placeholder="Address">
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="col-form-label">Title:</label>
+                            <label class="col-form-label">Job Title:</label>
                             <input value="{{$item?$item->employertitle : old('employertitle')}}" name="employertitle" class="form-control" placeholder="Address 2">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Phone:</label>
                             <input value="{{$item?$item->employerphone : old('employerphone')}}" name="employerphone" class="form-control" placeholder="Phone">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3">
                             <label class="col-form-label">Address 1:</label>
                             <input value="{{$item?$item->employeraddress1 : old('employeraddress1')}}" name="employeraddress1" class="form-control" placeholder="Address">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3">
                             <label class="col-form-label">Address 2:</label>
                             <input value="{{$item?$item->employeraddress2 : old('employeraddress2')}}" name="employeraddress2" class="form-control" placeholder="Address 2">
                         </div>
@@ -45,6 +45,10 @@
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Postal Code:</label>
                             <input value="{{$item?$item->employeraddresspostal : old('employeraddresspostal')}}" name="employeraddresspostal" class="form-control" placeholder="Postal code">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="col-form-label">Company Phone:</label>
+                            <input value="{{$item?$item->employerphone : old('employerphone')}}" name="employerphone" class="form-control" placeholder="Company Phone">
                         </div>
                     </div>
                 </div>
