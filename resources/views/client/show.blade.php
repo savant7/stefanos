@@ -26,7 +26,7 @@
                     <li class="nav-item"><a class="nav-link" href="#employment" data-toggle="tab">Employment</a></li>
                     @endif
                     @if($ucustoms && $ucustoms->tabcustom)
-                    <li class="nav-item"><a class="nav-link" href="#customs" data-toggle="tab">Customs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#customs" data-toggle="tab">Custom</a></li>
                     @endif
                     @if($ucustoms && $ucustoms->tabnote)
                     <li class="nav-item"><a class="nav-link" href="#notes" data-toggle="tab">Notes</a></li>
