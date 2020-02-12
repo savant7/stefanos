@@ -105,7 +105,7 @@
 @stop
 
 @section('js')
-<script src="/vendor/jquery/jquery.inputmask.min.js"></script>
+<script src="{{ asset('/vendor/jquery/jquery.inputmask.min.js')}}"></script>
 <script>
     $('[data-mask]').inputmask();
     $('.select2bs4').select2({ theme: 'bootstrap4' })

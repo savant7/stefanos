@@ -608,7 +608,7 @@ return [
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '/vendor/plugins/select2-bootstrap4.min.css',
                 ],
             ],
