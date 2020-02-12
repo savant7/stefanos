@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use Illuminate\Http\Request;
-use App\AdminUserCustom;
+use App\UserCustom;
 
 class ClientController extends Controller {
 
@@ -27,7 +27,7 @@ class ClientController extends Controller {
         $item = null;
         $type = 'client';
         $title = 'Add Client';
-        $ucustoms = AdminUserCustom::first();
+        $ucustoms = UserCustom::first();
         $labels = getLabels($ucustoms);
         return view('client.show', compact('item', 'type', 'labels', 'title', 'ucustoms'));
     }
@@ -71,7 +71,7 @@ class ClientController extends Controller {
         $item = $client;
         $type = 'client';
         $title = 'View / Edit Client';
-        $ucustoms = AdminUserCustom::first();
+        $ucustoms = UserCustom::first();
         $labels = getLabels($ucustoms);
         return view('client.show', compact('item', 'type', 'labels', 'title', 'ucustoms'));
     }

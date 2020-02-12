@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Scopes\UserScope;
-class AdminUserCustom extends Model
+class UserCustom extends Model
 {
-    protected $table = 'adminusercustom';
+    protected $table = 'usercustom';
     protected $guarded = [];
     
         protected static function boot() {

@@ -13,7 +13,7 @@ class CreateAdminUserCustomsTable extends Migration
      */
     public function up()
     {
-        Schema::create('adminusercustom', function (Blueprint $table) {
+        Schema::create('usercustom', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('customfield1')->nullable();
@@ -52,6 +52,6 @@ class CreateAdminUserCustomsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('adminusercustom');
+        Schema::dropIfExists('usercustom');
     }
 }

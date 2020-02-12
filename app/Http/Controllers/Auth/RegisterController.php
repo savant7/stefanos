@@ -8,7 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use App\AdminUserCustom;
+use App\UserCustom;
 class RegisterController extends Controller
 {
     /*
@@ -86,7 +86,7 @@ class RegisterController extends Controller
     }
     
     protected function registered(\Illuminate\Http\Request $request, $user) {
-        AdminUserCustom::create([
+        UserCustom::create([
             'user_id' => $user->id,
         ]);
     }
