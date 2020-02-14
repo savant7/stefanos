@@ -14,7 +14,7 @@
             <div class="card-header">
                 <h3 class="card-title">
                     <a  class="btn btn-info" href="{{ route('clients.create')}}">Add New</a>
-                    <a  class="btn btn-warning" href="#">Schedule Email</a>
+                    <a  class="btn btn-warning" href="#">Schedule Email1</a>
                 </h3>
             </div>
             <!-- /.card-header -->
