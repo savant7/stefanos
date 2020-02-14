@@ -12,7 +12,7 @@
         <div class="card">
             <div class="card-header p-2">
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a class="nav-link active" href="#main" data-toggle="tab">Main</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#main" data-toggle="tab">Main2</a></li>
                     @if(isset($item))
                     <li class="nav-item"><a class="nav-link" href="#tasks" data-toggle="tab">Tasks</a></li>
                     @endif
